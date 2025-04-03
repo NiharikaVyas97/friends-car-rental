@@ -1,0 +1,56 @@
+import Footer from "../components/Footer";
+import HeroPages from "../components/HeroPages";
+import Person1 from "../images/team/1.webp";
+import Person2 from "../images/team/2.webp";
+import Person3 from "../images/team/3.webp";
+import Person4 from "../images/team/4.webp";
+import Person5 from "../images/team/5.webp";
+import Person6 from "../images/team/6.webp";
+
+function Team() {
+  const teamPpl = [
+    { img: Person1, name: "Chandler Bing", job: "Transponster" },
+    { img: Person2, name: "Monica Geller", job: "Head Chef" },
+    { img: Person3, name: "Dr. Ross Geller", job: "Paleontologist" },
+    { img: Person4, name: "Rachel Greene", job: "Head of Fashion" },
+    { img: Person5, name: "Joseph Tribbiani", job: "Actor" },
+    { img: Person6, name: "Phoebe Buffay", job: "Masseuse" },
+  ];
+  return (
+    <>
+      <section className="team-page">
+        <HeroPages name="Our Team" />
+        <div className="cotnainer">
+          <div className="team-container">
+            {teamPpl.map((ppl, id) => (
+              <div key={id} className="team-container__box">
+                <div className="team-container__box__img-div">
+                  <img src={ppl.img} alt="team_img" />
+                </div>
+                <div className="team-container__box__descr">
+                  <h3>{ppl.name}</h3>
+                  <p>{ppl.job}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="book-banner">
+          <div className="book-banner__overlay"></div>
+          <div className="container">
+            <div className="text-content">
+              <h2>Book a car by getting in touch with us</h2>
+              <span>
+                <i className="fa-solid fa-phone"></i>
+                <h3>(+91) 8209336727</h3>
+              </span>
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </section>
+    </>
+  );
+}
+
+export default Team;
